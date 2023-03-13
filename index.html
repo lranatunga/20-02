@@ -1,0 +1,293 @@
+<!-- 
+01A 
+Use querySelector to select the first paragraph element on a page and change its text to "Hello World!" 
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 1a</title>
+</head>
+<body>
+	<p>This is the first paragraph.</p>
+	<p>This is the second paragraph.</p>
+    <script>
+        document.querySelector('p').textContent= "Hello World!";
+    </script>
+</body>
+</html>
+
+<!--  
+01B 
+Use getElementById to select an element with the ID "myDiv" and change its background color to green.
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 1b</title>
+</head>
+<body>
+	<div id="myDiv">
+		<p>This is a div with the ID "myDiv".</p>
+	</div>
+    <script>
+        document.getElementById('myDiv').style.backgroundColor = 'green' ;     
+    </script>
+</body>
+</html>
+
+<!-- 
+02A
+Use getElementsByTagName to select all the images on a page and log their alt attributes to the console.
+ -->
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 2a</title>
+</head>
+<body>
+	<img src="image1.jpg" alt="Image 1">
+	<img src="image2.jpg" alt="Image 2">
+	<img src="image3.jpg" alt="Image 3">
+    <script>
+      let images =  document.getElementsByTagName('img');
+        for (let i = 0; i< images.length; i++){
+            console.log(images[i].alt);
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+02B 
+Use getElementsByClassName to select all the elements with the class "myClass" and change their font color to blue.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 2b</title>
+	<style>
+		.myClass {
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<p class="myClass">This is a paragraph with the class "myClass".</p>
+	<p>This is another paragraph.</p>
+	<div class="myClass">This is a div with the class "myClass".</div>
+    <script>
+      let myclassEl = document.getElementsByClassName('myClass');
+       for (let i = 0; i < myclassEl.length; i++){
+        myclassEl[i].style.color = 'blue';
+    }
+
+    </script>
+</body>
+</html>
+
+<!-- 
+03A 
+Use querySelectorAll to select all the anchor elements on a page and log their href attributes to the console.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 3a</title>
+</head>
+<body>
+	<a href="https://www.google.com">Google</a>
+	<a href="https://www.facebook.com">Facebook</a>
+	<a href="https://www.twitter.com">Twitter</a>
+    <script>
+        let anchorElement = document.querySelectorAll('a');
+        for(let i = 0; i < anchorElement.length; i++){
+            console.log(anchorElement[i].href);
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+03B
+Use querySelectorAll to select all the elements with the class "myClass" and add the class "highlight" to them.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 3b</title>
+	<style>
+		.myClass {
+			color: black;
+		}
+
+		.highlight {
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<p class="myClass">This is a paragraph with the class "myClass".</p>
+	<p>This is another paragraph.</p>
+	<div class="myClass">This is a div with the class "myClass".</div>
+
+	<script>
+		let highlight = document.querySelectorAll('myClass');
+			for (let i=0; i = highlight.querySelectorAll; i++){
+				highlight[i].classList.add('highlight')
+			}
+	</script>
+</body>
+</html>
+
+<!-- 
+04A
+Use appendChild to add a new paragraph element to the end of a div element with the ID "myDiv".
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 4a</title>
+</head>
+<body>
+	<div id="myDiv">
+		<p>This is a div with the ID "myDiv".</p>
+	</div>
+	<script>
+		let divEl = document.getElementById('myDiv')
+		let newP = document.createElement('p');
+		newp.textContent = 'Add a new paragraph element'
+		divEl.appendChild(newp);
+
+	</script>
+</body>
+</html>
+
+<!-- 
+04B
+Use innerHTML to replace the contents of a div element with the ID "myDiv" with the text "Hello World!".
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 4b</title>
+</head>
+<body>
+	<div id="myDiv">
+		<p>This is a div with the ID "myDiv".</p>
+	</div>
+</body>
+</html>
+
+<!-- 
+05A
+Use JavaScript to change the font size of an element with the ID "myElement" to 20px.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 5a</title>
+	<style>
+		#myElement {
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<p id="myElement">This is a paragraph with the ID "myElement".</p>
+</body>
+</html>
+
+
+<!-- 
+05B
+Use JavaScript to change the border color of an element with the ID "myElement" to red.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 5b</title>
+	<style>
+		#myElement {
+			border: 2px solid black;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<p id="myElement">This is a paragraph with the ID "myElement".</p>
+</body>
+</html>
+
+<!-- 
+06A
+Use toggle to toggle the visibility of an element with the ID "myElement" when a button is clicked.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 6a</title>
+	<style>
+		#myElement {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<p id="myElement">This is a paragraph with the ID "myElement".</p>
+	<button>Toggle visibility</button>
+</body>
+</html>
+
+<!-- 
+06B
+Use classList.add to add the class "highlight" to an element with the ID "myElement" when a button is clicked.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 6b</title>
+	<style>
+		#myElement {
+			background-color: yellow;
+		}
+
+		.highlight {
+			border: 2px solid red;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<p id="myElement">This is a paragraph with the ID "myElement".</p>
+	<button>Add highlight</button>
+</body>
+</html>
+
+
+<!-- 
+06C
+Use classList.remove to remove the class "highlight" from an element with the ID "myElement" when a button is clicked.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 6c</title>
+	<style>
+		#myElement {
+			background-color: yellow;
+			border: 2px solid red;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<p id="myElement">This is a paragraph with the ID "myElement".</p>
+	<button>Remove highlight</button>
+	<span class="favorite-star-character">&#x2605;</span>
+</body>
+</html>
+
+

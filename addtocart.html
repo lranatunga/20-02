@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- # Exercise - The Cart
+
+
+### Create a page with a header.
+The header should contain a cart icon. 
+The cart icon should include the number of products that are currently in it.
+
+Create the following functionalities:
+
+1. If the cart is empty then it should display the number "0". This number should be in a round container.
+2. Below the header, add a product card with "+" and "-" buttons at the sides of an input element.
+3. When the user clicks on the "+" button, then the number at the cart icon in the header along with the number inside the input element should increase accordingly.
+4. Similarly, when the user clicks the "-" button, then the number at the cart icon in the header along with the number inside the input element should decrease accordingly.
+
+### **N.B. You should not allow negative numbers in both the cart and the input** -->
+
+<script>
+
+    data = [
+        {
+            id: 1,
+            name:'The Ink Black Heart', 
+            author:'Robert Galbraith',
+            image: 'https://m.media-amazon.com/images/I/51flaEkMjUL.jpg',
+            price:'Price: $12',
+        },
+        {
+            id: 2,
+            name:'Fantastic Mr Fox',
+            author:'Roald Dahl',
+            image:'https://m.media-amazon.com/images/I/417ardbYynL._SX323_BO1,204,203,200_.jpg',
+            price:'Price: $5',
+        },
+        {
+            id: 3,
+            name:'The Adventure of Sherlock Holmes',
+            author: 'Sir Arthur Conan Doyle',
+            image: 'https://m.media-amazon.com/images/I/71GcGnYoSKL._AC_UY545_FMwebp_QL65_.jpg',
+            price: 'Price: $8',
+
+        },
+        {
+            id: 4,
+            name:'Harry Potter and the philosopher\'\s Stone',
+            author: 'J.K. Rowling',
+            image: 'https://m.media-amazon.com/images/I/91r0dvXhNGL._AC._SR360,460.jpg',
+            price:'Price: $18',  
+        },
+    ]
+
+    let header = document.createElement('header')
+    document.body.appendChild(header)
+    console.log(header)
+
+    let main = document.createElement('main')
+    document.body.appendChild(main)
+    console.log(main)
+
+    let divi = document.createElement('div')
+    header.appendChild(divi)
+
+    let home = document.createElement('div')
+    divi.appendChild(home)
+    home.textContent = "Home"
+
+    let contactUs = document.createElement('div')
+    divi.appendChild(contactUs)
+    contactUs.textContent = "Contact Us"
+
+    let iconCart = document.createElement('span')
+    divi.appendChild(iconCart)
+
+    let notification = document.createElement('span')
+    divi.appendChild(notification)
+    notification.setAttribute('id', 'totalItems')
+
+    let image = document.createElement('img')
+    iconCart.appendChild(image).src = 'icons8-shopping-cart/icons8-shopping-cart-30.png'
+  
+    
+
+    header.style.backgroundColor = 'skyblue'
+    header.style.width = '80vw'
+    header.style.height = '10%'
+    header.style.margin ='auto'
+
+    divi.style.display = 'flex'
+    divi.style.gap = '30px'
+    divi.style.padding = '30px 10px'
+    divi.style.justifyContent = 'center'
+    divi.style.alignSelf = 'center'
+    divi.style.fontSize = '1.2rem'
+
+    home.style.marginTop = '5px'
+
+    contactUs.style.marginTop = '5px'
+
+    
+    notification.style.color = 'white'
+    notification.style.backgroundColor = 'rgb(185, 139, 224)'
+    notification.style.marginLeft = '-33px'
+    notification.style.marginTop = '-10px'
+    notification.style.height = '25px'
+    notification.style.width = '25px'
+    notification.style.borderRadius = '50%'
+    notification.style.textAlign = 'center'
+    notification.textContent = '0'
+    
+
+    main.style.width = '80vw'
+    main.style.height = '100vh'
+    main.style. backgroundColor = "rgb(206, 234, 235)"
+    main.style.margin='auto'
+    main.style.display = 'flex'
+    main.style.flexWrap = 'wrap'
+  
+
+    
+    for (let i = 0; i< data.length; i++){
+        cardCreation(i)
+    }
+
+    function cardCreation (i){
+
+
+    let card = document.createElement('div')
+    main.appendChild(card)
+    
+    card.style.width = '200px'
+    card.style.height = '400px'
+    card.style.display = 'flex'
+    card.style.flexDirection = 'column'
+    card.style.backgroundColor = 'rgb(99, 91, 138)'
+    card.style.borderRadius = '15px'
+    card.style.gap = '20px'
+    card.style.margin = '15px'
+    card.style.justifyContent= 'center'
+    card.style.alignItems = 'center'
+    card.style.color = 'white'
+
+    let itemImage = document.createElement('img')
+    card.appendChild(itemImage)
+
+    itemImage.style.width = '150px'
+    itemImage.style.height = '200px'
+    itemImage.style.objectFit = 'cover'
+    itemImage.style.borderRadius = '8px'
+    itemImage.src = data[i].image
+
+    let itemName = document.createElement('P')
+    card.appendChild(itemName)
+    itemName.textContent = data[i].name
+    itemName.style.margin = '0'
+    itemName.style.textAlign = 'center'
+
+    let author = document.createElement('P')
+    card.appendChild(author)
+    author.textContent = data[i].author
+    author.style.margin = '0'
+
+    let itemPrice = document.createElement('P')
+    card.appendChild(itemPrice)
+    itemPrice.textContent = data[i].price
+    itemPrice.style.margin = '0' 
+
+    let buttonSpan= document.createElement('p')
+    card.appendChild(buttonSpan)
+    buttonSpan.style.margin = '0'
+
+    let minusButton = document.createElement('button')
+    buttonSpan.appendChild(minusButton)
+    minusButton.textContent = '-'
+    minusButton.style.fontSize = '1rem'
+    minusButton.setAttribute('class', 'remove')
+
+    let addButton = document.createElement('button')
+    buttonSpan.appendChild(addButton)
+    addButton.textContent = 'Add To Cart'
+    addButton.style.fontSize = '1rem'
+    addButton.setAttribute('class', 'addToCart')
+
+    let plusButton = document.createElement('button')
+    buttonSpan.appendChild(plusButton)
+    plusButton.textContent = '+'
+    plusButton.style.fontSize = '1rem'
+    plusButton.setAttribute('class', 'add')
+    let currentValue = 0;
+    let itemsInCart = document.getElementById('totalItems')
+    document.querySelectorAll('button').forEach(function(button) {
+  button.addEventListener('click', function() {
+    
+
+    if (button.textContent === '+') {
+      currentValue ++
+    } else {
+      currentValue --
+      
+    }
+
+    if (currentValue <= 0) {
+      currentValue = 0;
+    }
+    itemsInCart.textContent = currentValue
+  });
+});
+
+    }
+
+
+
+    // let itemsInCart = document.getElementById('totalItems')
+    // let cartTotal = document.getElementsByClassName('add')
+    // let cartCount = 0
+    // cartTotal.addEventListener('click', () =>{
+    //     cartCount ++
+    //     itemsInCart.textContent = cartCount
+    // })
+    // let cartTotalLess = document.getElementsByClassName('remove')
+    // cartTotalLess.addEventListener('click', () =>{
+    //    if(cartCount >= 1) {cartCount --
+    //     itemsInCart.textContent = cartCount}
+    //     else cartCount === 0
+    // })
+    
+
+
+
+
+  
+
+</script>
+
+
+</body>
+</html>
