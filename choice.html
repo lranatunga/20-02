@@ -34,7 +34,51 @@ In any of these two last scenarios, the program should display button/link which
 
 ### **N.B. The program should be able to recognize user's input regardless of letter casing.** -->
 
+<script>
 
+    let main = document.createElement('main')
+    document.body.appendChild(main)
+    console.log(main)
+
+    main.style.width = '80vw'
+    main.style.height = '100vh'
+    main.style. backgroundColor = "rgb(206, 234, 235)"
+    main.style.margin='auto'
+
+    let ul = document.createElement('ul')
+    main.appendChild(ul)
+    ul.setAttribute('id', 'choice')
+    console.log(ul)
+
+    function createList (){
+        let listContent = ["What is your favorite song?", "What is your favorite drink?", "What is your favorite food?", "What is your favorite hobby?"  ]
+       
+        
+        for (let i =0; i < 4; i++){
+            let list = document.createElement('li')
+            let anchor = document.createElement('a')
+            list.appendChild(anchor)
+            anchor.textContent = listContent[i]
+            document.getElementById('choice').appendChild(list)  
+        
+            list.style.cursor = 'pointer';
+            list.style.padding = '1rem';
+            list.style.fontSize = '2rem';
+            list.style.listStyleType = 'none'
+    } }
+    createList();
+
+    
+
+
+
+
+
+
+
+//
+
+</script>
 
 
 </body>
