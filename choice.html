@@ -40,15 +40,18 @@ In any of these two last scenarios, the program should display button/link which
     document.body.appendChild(main)
     console.log(main)
 
-    main.style.width = '80vw'
-    main.style.height = '100vh'
-    main.style. backgroundColor = "rgb(206, 234, 235)"
-    main.style.margin='auto'
+    main.style.width = '80vw';
+    main.style.height = '100vh';
+    main.style. backgroundColor = "rgb(206, 234, 235)";
+    main.style.margin='auto';
+    main.style.display = 'flex';
+    main.style.flexDirection = 'column';
 
     let ul = document.createElement('ul')
     main.appendChild(ul)
     ul.setAttribute('id', 'choice')
     console.log(ul)
+    ul.style.alignSelf= 'center';
 
     function createList (){
         let listContent = ["What is your favorite song?", "What is your favorite drink?", "What is your favorite food?", "What is your favorite hobby?"  ]
@@ -65,18 +68,38 @@ In any of these two last scenarios, the program should display button/link which
             list.style.padding = '1rem';
             list.style.fontSize = '2rem';
             list.style.listStyleType = 'none'
+            
     } }
     createList();
 
+    function classList (){
+        let classNames = ['song', 'drink', 'food', 'hobby']
+        for (let  i = 0; i< classNames.list; i++){
+            document.list.setAttribute('class', 'classNames[i]')
+        }
+
+    }
+    classList()
     
 
 
+    let play = document.createElement('button')
+    main.appendChild(play)
+    play.textContent = 'Play Again'
+
+    play.style.width = '12rem';
+    play.style.height = '4rem';
+    play.style.fontSize = '2rem';
+    play.style.justifyContent = 'center';
+    play.style.alignSelf= 'center';
+    play.style.borderRadius = '1rem';
+    play.style.backgroundColor = 'skyblue'
+    play.style.cursor = 'pointer';
 
 
 
 
 
-//
 
 </script>
 
