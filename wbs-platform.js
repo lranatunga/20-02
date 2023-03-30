@@ -240,3 +240,30 @@ const toEmoticon = feeling => {
   // Uncomment the line below when you're ready to try out your function
   console.log(toEmoticon("whatever")) 
   console.log(toEmoticon("smiley face")) 
+
+  // Create a JSON with 2 students:
+  // - first name : Han / last name : Solo
+  // - first name : Chew / last name : Bacca
+
+  const students = {
+    "students":[
+        {
+          "first_name": "Han",
+          "last_name": "Solo"
+        },
+        {
+          "first_name": "Chew",
+          "last_name": "Bacca"
+        }
+      ]
+      }
+  console.log(students);
+
+
+//   Without changing the variable in index.js
+// Transform the text into an object and display the value of “first_name”.
+
+  const text = '{"name" : "Dupont", "first_name" : "Jean"}';
+  let firstName = JSON.parse(text);
+  console.log(firstName)
+  console.log(firstName.first_name)
