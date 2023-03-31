@@ -81,6 +81,9 @@ console.log(string6.length > 3 ? string6.slice(-3)+string6+string6.slice(-3) : '
  * without using Math.max()
  */
 
+
+
+
 /**
  * 08
  * Write a program that finds the number which is nearest to 100 
@@ -97,3 +100,6 @@ console.log(difference1 < difference2 ? num81 : num82)
  * Write a program that checks whether the last digit of three given positive integers 
  * is the same
  */
+
+const num91 = 33 , num92 = 63, num93 = 123
+console.log(num91 % 10 == num92 % 10 && num91 % 10 == num93 % 10 && num92 % 10  == num93 % 10 ? 'The last digit of three given positive integers is the same' : 'The last digit of three given positive integers is not same')
